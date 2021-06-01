@@ -1,0 +1,1 @@
+It's a base structure of TS.
