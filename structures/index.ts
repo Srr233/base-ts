@@ -2,6 +2,7 @@ import { LinkedListOne } from "./list";
 import { MyStack } from "./stack";
 import { MyQueue } from './queue';
 import { BinaryTree } from './binary_tree';
+import { Hash } from './hash';
 
 function test(MyConstructor: new () => any) {
   const instance = new MyConstructor();
@@ -40,15 +41,36 @@ function test(MyConstructor: new () => any) {
 // }
 // console.log(stack.length);
 
-const myTree = new BinaryTree();
+// const myTree = new BinaryTree();
 
-myTree.insert(1);
-myTree.insert(2);
-myTree.insert(3);
-myTree.insert(7);
-myTree.insert(5);
-myTree.insert(9);
-myTree.insert(6);
+// myTree.insert(1);
+// myTree.insert(2);
+// myTree.insert(3);
+// myTree.insert(7);
+// myTree.insert(5);
+// myTree.insert(9);
+// myTree.insert(6);
 
-console.log(myTree.search(2));
+// console.log(myTree.search(2));
+
+const myHash = new Hash();
+
+myHash.set('Gay club', 'My big dic in ur ass');
+myHash.set('club Gay', 1);
+myHash.set('Gay www', {dorado: 20});
+myHash.set('Null?', null);
+
+myHash.set('Null?', 'No, it\'s not');
+myHash.get('Null?');
+myHash.get('Nul?');
+myHash.get('club Gay');
+
+myHash.set('Дима', 375291119900);
+console.log(myHash.get('Дима'));
+myHash.set('Дима', 375214125112);
+myHash.set('иДма', 1241512512);
+console.log(myHash.get('Дима'));
+myHash.delete('иДма');
+myHash.delete('Дима');
+
 
