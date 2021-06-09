@@ -3,6 +3,7 @@ import { MyStack } from "./stack";
 import { MyQueue } from './queue';
 import { BinaryTree } from './binary_tree';
 import { Hash } from './hash';
+import { Graph } from './graph';
 
 function test(MyConstructor: new () => any) {
   const instance = new MyConstructor();
@@ -53,24 +54,40 @@ function test(MyConstructor: new () => any) {
 
 // console.log(myTree.search(2));
 
-const myHash = new Hash();
+// const myHash = new Hash();
 
-myHash.set('Gay club', 'My big dic in ur ass');
-myHash.set('club Gay', 1);
-myHash.set('Gay www', {dorado: 20});
-myHash.set('Null?', null);
+// myHash.set('Gay club', 'My big dic in ur ass');
+// myHash.set('club Gay', 1);
+// myHash.set('Gay www', {dorado: 20});
+// myHash.set('Null?', null);
 
-myHash.set('Null?', 'No, it\'s not');
-myHash.get('Null?');
-myHash.get('Nul?');
-myHash.get('club Gay');
+// myHash.set('Null?', 'No, it\'s not');
+// myHash.get('Null?');
+// myHash.get('Nul?');
+// myHash.get('club Gay');
 
-myHash.set('Дима', 375291119900);
-console.log(myHash.get('Дима'));
-myHash.set('Дима', 375214125112);
-myHash.set('иДма', 1241512512);
-console.log(myHash.get('Дима'));
-myHash.delete('иДма');
-myHash.delete('Дима');
+// myHash.set('Дима', 375291119900);
+// console.log(myHash.get('Дима'));
+// myHash.set('Дима', 375214125112);
+// myHash.set('иДма', 1241512512);
+// console.log(myHash.get('Дима'));
+// myHash.delete('иДма');
+// myHash.delete('Дима');
 
+const myGraph = new Graph();
+myGraph.set('Огоренко', 20, 'Универмаг');
+myGraph.set('Универмаг', 10, 'Площадь Ленина');
+myGraph.set('Брянский', 5, 'Площадь Ленина');
+myGraph.set('Площадь Ленина', 10, 'Комминтерн');
+myGraph.set('Комминтерн', 10, 'Зип');
+myGraph.set('Зип', 30, 'Гиппо');
 
+const wayOgorToGipp = myGraph.search('Огоренко', 'Гиппо');
+console.dir(wayOgorToGipp);
+let allMinutes = 0;
+if (wayOgorToGipp[0]) {
+  for (let i = 0; i < wayOgorToGipp[0].length; i++) {
+    allMinutes += wayOgorToGipp[0][i].cost;
+  }
+  console.log(`You need ${allMinutes} minutes for arriving to the point`);
+}
